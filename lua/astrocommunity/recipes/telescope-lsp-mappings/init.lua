@@ -11,6 +11,10 @@ return {
     if opts.mappings.n.gy then
       opts.mappings.n.gy[1] = function() require("telescope.builtin").lsp_type_definitions { reuse_win = true } end
     end
+    vim.print(opts.mappings.n)
+    if opts.mappings.n.grr then
+      opts.mappings.n.grr[1] = function() require("telescope.builtin").lsp_references { reuse_win = true } end
+    end
     if opts.mappings.n["<Leader>lG"] then
       opts.mappings.n["<Leader>lG"][1] = function()
         vim.ui.input({ prompt = "Symbol Query: (leave empty for word under cursor)" }, function(query)
